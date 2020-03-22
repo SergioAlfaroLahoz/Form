@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+  font-family: "Roboto", Arial;
+  border-top: 30px solid #303f9f;
+}
+
+.wrap {
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  margin: auto;
+  background: #ffffff;
+  margin: auto;
+  -webkit-box-shadow: 0px 0px 3px grey;
+          box-shadow: 0px 0px 3px grey;
+}
+
+.form-holder {
+  width: 100%;
+  color: #f2f2f2;
+  padding: 50px;
+}
+
+.form-holder .form {
+  width: 100%;
+  margin: auto;
+}
+
+.form-holder .form .input-group {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.form-holder .form .input-group input[type="text"], .form-holder .form .input-group input[type="email"], .form-holder .form .input-group input[type="password"] {
+  font-size: 16px;
+  color: #303f9f;
+  width: 100%;
+  outline: none;
+  padding: 15px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #bbdefb;
+}
+
+.form-holder .form .input-group input[type="text"]:focus, .form-holder .form .input-group input[type="text"]:active, .form-holder .form .input-group input[type="email"]:focus, .form-holder .form .input-group input[type="email"]:active, .form-holder .form .input-group input[type="password"]:focus, .form-holder .form .input-group input[type="password"]:active {
+  outline: none;
+  border-bottom: 2px solid #303f9f;
+}
+
+.form-holder .form .input-group input[type="text"].error, .form-holder .form .input-group input[type="email"].error, .form-holder .form .input-group input[type="password"].error {
+  border-bottom: 2px solid #D32F2F;
+}
+
+.form-holder .form .input-group input[type="text"].error + label, .form-holder .form .input-group input[type="email"].error + label, .form-holder .form .input-group input[type="password"].error + label {
+  color: #D32F2F;
+}
+
+.form-holder .form label {
+  color: #303f9f;
+}
+
+.form-holder .form label.label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  font-size: 16px;
+  line-height: 16px;
+  margin-left: 16px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.form-holder .form label.label.active {
+  top: -12px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #b6b6b6;
+}
+
+.form-holder .form .checkbox label, .form-holder .form .radio label {
+  display: inline-block;
+  cursor: pointer;
+  color: #303f9f;
+  position: relative;
+  padding: 5px 15px 5px 51px;
+  font-size: 1em;
+  border-radius: 3px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.form-holder .form .checkbox label:hover, .form-holder .form .radio label:hover {
+  background: #bbdefb;
+}
+
+.form-holder .form .checkbox label:before, .form-holder .form .radio label:before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: 15px;
+  top: 3.5px;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid #303f9f;
+}
+
+.form-holder .form .error label {
+  color: #D32F2F;
+}
+
+.form-holder .form .error label:hover {
+  background: rgba(211, 47, 47, 0.2);
+}
+
+.form-holder .form .error label:before {
+  border: 2px solid #D32F2F;
+}
+
+.form-holder .form .radio input[type="radio"] {
+  display: none;
+}
+
+.form-holder .form .radio input[type="radio"]:checked + label:before {
+  display: none;
+}
+
+.form-holder .form .radio input[type="radio"]:checked + label {
+  padding: 5px 15px;
+  background: #303f9f;
+  color: #f2f2f2;
+  border-radius: 2px;
+}
+
+.form-holder .form .checkbox label:before {
+  border-radius: 3px;
+}
+
+.form-holder .form .checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.form-holder .form .checkbox input[type="checkbox"]:checked + label:before {
+  display: none;
+}
+
+.form-holder .form .checkbox input[type="checkbox"]:checked + label {
+  padding: 5px 15px;
+  background: #303f9f;
+  color: #f2f2f2;
+}
+
+.form-holder .form input[type="submit"] {
+  background: #303f9f;
+  border-radius: 1px;
+  border: 2px solid #f2f2f2;
+  color: #f2f2f2;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px;
+  width: 100%;
+  font-family: "Roboto", Arial;
+  font-size: 16px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.form-holder .form input[type="submit"]:hover {
+  background: #1976D2;
+}
+/*# sourceMappingURL=styles.css.map */

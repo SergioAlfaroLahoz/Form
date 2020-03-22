@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="form-holder">
+        <div class="wrap">
+            <!--Form-->
+            <form action="" class="form" name="form_register" method="get">
+                <div>
+                    <div class="input-group">
+                        <input type="text" id="name" name="name">
+                        <label class="label" for="name">Name:</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="email">
+                        <label class="label" for="email">Email:</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" name="password">
+                        <label class="label" for="password">Password:</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password2" name="password2">
+                        <label class="label" for="password2">Repeat password:</label>
+                    </div>
+                    <div class="input-group radio">
+                        <input type="radio" name="gender" id="male" value="Male">
+                        <label for="male">Male</label>
+
+                        <input type="radio" name="gender" id="female" value="Female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="input-group checkbox">
+                        <input type="checkbox" name="terms" id="terms" value="true">
+                        <label for="terms">I agree to the terms and conditions</label>
+                    </div>
+
+                    <input type="submit" id="btn-submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/form.js"></script>
+</body>
+</html>

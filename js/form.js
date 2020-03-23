@@ -4,7 +4,7 @@
 
     //Functions
     var validateInputs = function(){
-        validate = 0;
+        var validate = 0;
         for (var i=0; i<elements.length; i++){
             if (elements[i].type=="text" || elements[i].type=="email" || elements[i].type=="password"){
                 if (elements[i].value==0){
@@ -22,9 +22,14 @@
         if (elements.password.value != elements.password2.value){
             elements.password.value = "";
             elements.password2.value = "";
-            elements.password.className = elements.password.className + "error";
-            elements.password2.className = elements.password2.className + "error";
+            if(elements.password.className!="error"){
+                elements.password.className = elements.password.className + "error";
+            }
+            if(elements.password2.className!="error"){
+                elements.password2.className = elements.password2.className + "error";
+            }
             return false;
+
         }else if(elements.password.value != 0){
             elements.password.className = elements.password.className.replace("error", "");
             elements.password2.className = elements.password2.className.replace("error", "");
@@ -32,18 +37,68 @@
 
         if(validate==elements.length/2){
             return true;
-        };
+        }
         return false
+    }
+
+    var validateRadios = function(){
+        var options = document.getElementsByName("gender");
+        var result = false;
+
+        for (var i=0; i<elements.length; i++){
+            if (elements[i].type=="radio" && elements[i].name=="gender"){
+                for (var j=0; j<options.length; j++){
+                    if (options[j].checked){
+                        result = true;
+                        break;
+                    }
+                }
+                if (result==false){
+                    elements[i].parentNode.className = elements[i].parentNode.className + " error";
+                    console.log("gender field isn't completed");
+                    return false;
+                } else {
+                    elements[i].parentNode.className = elements[i].parentNode.className.replace(" error", "");
+                    return true;
+                }
+            }
+        }
+    } 
+
+    var validateCheckbox = function(){
+        var options = document.getElementsByName("terms");
+        var result = false;
+
+        for (var i=0; i<elements.length; i++){
+            if (elements[i].type=="checkbox"){
+                for (var j=0; j<options.length; j++){
+                    if (options[j].checked){
+                        result = true;
+                        break;
+                    }
+                }
+                if (result==false){
+                    elements[i].parentNode.className = elements[i].parentNode.className + " error";
+                    console.log("please, accept terms and conditions");
+                    return false;
+                } else {
+                    elements[i].parentNode.className = elements[i].parentNode.className.replace(" error", "");
+                    return true;
+                }
+            }
+        }
     }
 
     var send = function(e){
         if (!validateInputs()){
             console.log("Inputs haven't been validated");
             e.preventDefault();
-        } else if(!validateRadios()){
+        } 
+        if(!validateRadios()){
             console.log("Radios haven't been validated");
             e.preventDefault();
-        } else if(!validateCheckbox()){
+        }
+        if(!validateCheckbox()){
             console.log("Checkbox haven't been validated");
             e.preventDefault();
         } else {
@@ -64,6 +119,10 @@
         }
     }
 
+    var clickInput = function(){
+        this.parentElement.className = this.parentElement.className.replace(" error", "");
+    }
+
 
     //Events
     form.addEventListener("submit", send);
@@ -72,6 +131,9 @@
         if (elements[i].type=="text" || elements[i].type=="email" || elements[i].type=="password"){
             elements[i].addEventListener("focus", focusInput);
             elements[i].addEventListener("blur", blurInput);
+        }
+        if(elements[i].type=="radio"){
+            elements[i].addEventListener("click", clickInput);
         }
     }
 }())
